@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>学习系统-首页</title>
+		<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+		<!--		<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<style type="text/css">
+			/*123*/
+			.left {
+				width: 120px;
+				float: left;
+			}
+			
+			.left table {
+				background: #E0ECFF;
+			}
+			
+			.left td {
+				background: #eee;
+			}
+			
+			.right {
+				float: right;
+				width: 600px;
+			}
+			
+			.right table {
+				background: #E0ECFF;
+				width: 100%;
+			}
+			
+			.right td {
+				background: #fafafa;
+				text-align: center;
+				padding: 2px;
+			}
+			
+			.right td {
+				background: #E0ECFF;
+			}
+			
+			.right td.drop {
+				background: #fafafa;
+				width: 100px;
+			}
+			
+			.right td.over {
+				background: #FBEC88;
+			}
+			
+			.item {
+				text-align: center;
+				border: 1px solid #499B33;
+				background: #fafafa;
+				width: 100px;
+			}
+			
+			.assigned {
+				border: 1px solid #BC2A4D;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<header>
+			<h2>自适应学习系统</h2>
+			<div class="userOrlogin">
+				<div class="user uol">
+					欢迎您，<span class="userName">XXX 老师</span>
+				</div>
+				<div class="subject uol">
+					数学
+				</div>
+				<div class="login uol">
+					<span id="loging" class="none">登录</span>
+					<span id="exit">退出</span>
+				</div>
+			</div>
+		</header>
+
+		<div class="easyui-layout" style="width:100%;height:910px;">
+			<div region="west" split="true" title="菜单导航" style="width:250px;padding: 10px;">
+				<ul class="easyui-tree" id="trees">
+					<li>
+						<span>班级概况</span>
+
+					</li>
+					<li>
+						<span>学生详情</span>
+					</li>
+					<li>
+						<span>作业管理</span>
+					</li>
+					<li>
+						<span>测评管理</span>
+					</li>
+					<li>
+						<span>通告管理</span>
+					</li>
+					<li>
+						<span>公共题库</span>
+					</li>
+					<li>
+						<span>我的题库</span>
+					</li>
+					<li>
+						<span>微课管理</span>
+					</li>
+					<li>
+						<span>个人设置</span>
+						<ul>
+							<li>
+								<span>个人资料</span>
+							</li>
+							<li>
+								<span>我的学习币</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="content" region="center" title="" style="padding:5px;">
+
+				<div id="_easyui_tree_1" class="easyui_tree">
+					<div class="left">
+						<table>
+							<tr>
+								<td>
+									<div class="item">一年级</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="item">二年级</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="item">三年级</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="item">四年级</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="right">
+						<table class="table">
+							<tr>
+								<td class="blank">111</td>
+								<td class="title">Monday</td>
+								<td class="title">Tuesday</td>
+								<td class="title">Wednesday</td>
+								<td class="title">Thursday</td>
+								<td class="title">Friday</td>
+							</tr>
+							<tr>
+								<td class="time">08:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+							<tr>
+								<td class="time">09:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+							<tr>
+								<td class="time">10:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div id="_easyui_tree_2" class="easyui_tree none">
+					<div class="left">
+						<table>
+							<tr>
+								<td>
+									<div class="item">English</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="item">Science</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="item">Music</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="item">History</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="item">Computer</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="item">Mathematics</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="item">Arts</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="item">Ethics</div>
+								</td>
+							</tr>
+
+						</table>
+					</div>
+					<div class="right">
+						<table>
+							<tr>
+								<td class="blank"></td>
+								<td class="title">Monday</td>
+								<td class="title">Tuesday</td>
+								<td class="title">Wednesday</td>
+								<td class="title">Thursday</td>
+								<td class="title">Friday</td>
+							</tr>
+							<tr>
+								<td class="time">08:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+							<tr>
+								<td class="time">09:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+							<tr>
+								<td class="time">10:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+							<tr>
+								<td class="time">11:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+							<tr>
+								<td class="time">12:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+							<tr>
+								<td class="time">13:00</td>
+								<td class="lunch" colspan="5">Lunch</td>
+							</tr>
+							<tr>
+								<td class="time">14:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+							<tr>
+								<td class="time">15:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+							<tr>
+								<td class="time">16:00</td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+								<td class="drop"></td>
+							</tr>
+						</table>
+
+					</div>
+				</div>
+
+				<div id="_easyui_tree_3" class="easyui_tree none">
+					<div style="padding:3px 2px;border-bottom:1px solid #ccc">作业信息验证</div>
+					<form id="ff" method="post">
+						<div>
+							<label for="name">Name:</label>
+							<input class="easyui-validatebox" type="text" name="name" required="true"></input>
+						</div>
+						<div>
+							<label for="email">Email:</label>
+							<input class="easyui-validatebox" type="text" name="email" required="true" validType="email"></input>
+						</div>
+						<div>
+							<label for="subject">Subject:</label>
+							<input class="easyui-validatebox" type="text" name="subject" required="true"></input>
+						</div>
+						<div>
+							<label for="message">Message:</label> <textarea name="message" style="height:60px;"></textarea>;
+						</div>
+						<div>
+							<input type="submit" value="Submit">
+						</div>
+					</form>
+				</div>
+				<div id="_easyui_tree_4" class="easyui_tree none">
+					<h1>测评数据</h1>
+					<table id="tt" class="easyui-datagrid" style="width:600px;height:250px" url="datagrid2_getdata.php" title="Load Data" iconCls="icon-save" rownumbers="true" pagination="true">
+						<thead>
+							<tr>
+								<th field="itemid" width="80">Item ID</th>
+								<th field="productid" width="80">Product ID</th>
+								<th field="listprice" width="80" align="right">List Price</th>
+								<th field="unitcost" width="80" align="right">Unit Cost</th>
+								<th field="attr1" width="150">Attribute</th>
+								<th field="status" width="60" align="center">Stauts</th>
+							</tr>
+						</thead>
+					</table>
+
+				</div>
+
+				<div id="_easyui_tree_5" class="easyui_tree none">
+					<h2>Auto Height for Layout</h2>
+					<p>This example shows how to auto adjust layout height after dynamically adding items.</p>
+					<div style="margin:20px 0;">
+						<a href="javascript:void(0)" class="easyui-linkbutton" onclick="addItem()">Add Item</a>
+						<a href="javascript:void(0)" class="easyui-linkbutton" onclick="removeItem()">Remove Item</a>
+					</div>
+					<div id="cc" style="width:700px;height:350px;">
+						<div data-options="region:'north'" style="height:50px"></div>
+						<div data-options="region:'south'" style="height:50px;"></div>
+						<div data-options="region:'west'" style="width:150px;"></div>
+						<div data-options="region:'center'" style="padding:20px">
+							<p>Panel Content.</p>
+							<p>Panel Content.</p>
+							<p>Panel Content.</p>
+							<p>Panel Content.</p>
+							<p>Panel Content.</p>
+						</div>
+					</div>
+				</div>
+
+				<div id="_easyui_tree_6" class="easyui_tree none">
+					<h2>Basic CRUD Application</h2>
+					<p>Click the buttons on datagrid toolbar to do crud actions.</p>
+
+					<table id="dg" title="My Users" class="easyui-datagrid" style="width:700px;height:250px" url="get_users.php" toolbar="#toolbar" pagination="true" rownumbers="true" fitColumns="true" singleSelect="true">
+						<thead>
+							<tr>
+								<th field="firstname" width="50">First Name</th>
+								<th field="lastname" width="50">Last Name</th>
+								<th field="phone" width="50">Phone</th>
+								<th field="email" width="50">Email</th>
+							</tr>
+						</thead>
+					</table>
+					<div id="toolbar">
+						<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">New User</a>
+						<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Edit User</a>
+						<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Remove User</a>
+					</div>
+
+					<div id="dlg" class="easyui-dialog" style="width:400px" closed="true" buttons="#dlg-buttons">
+						<form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+							<div style="margin-bottom:20px;font-size:14px;border-bottom:1px solid #ccc">User Information</div>
+							<div style="margin-bottom:10px">
+								<input name="firstname" class="easyui-textbox" required="true" label="First Name:" style="width:100%">
+							</div>
+							<div style="margin-bottom:10px">
+								<input name="lastname" class="easyui-textbox" required="true" label="Last Name:" style="width:100%">
+							</div>
+							<div style="margin-bottom:10px">
+								<input name="phone" class="easyui-textbox" required="true" label="Phone:" style="width:100%">
+							</div>
+							<div style="margin-bottom:10px">
+								<input name="email" class="easyui-textbox" required="true" validType="email" label="Email:" style="width:100%">
+							</div>
+						</form>
+					</div>
+					<div id="dlg-buttons">
+						<a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Save</a>
+						<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancel</a>
+					</div>
+					<script type="text/javascript">
+						var url;
+
+						function newUser() {
+							$('#dlg').dialog('open').dialog('center').dialog('setTitle', 'New User');
+							$('#fm').form('clear');
+							url = 'save_user.php';
+						}
+
+						function editUser() {
+							var row = $('#dg').datagrid('getSelected');
+							if(row) {
+								$('#dlg').dialog('open').dialog('center').dialog('setTitle', 'Edit User');
+								$('#fm').form('load', row);
+								url = 'update_user.php?id=' + row.id;
+							}
+						}
+
+						function saveUser() {
+							$('#fm').form('submit', {
+								url: url,
+								onSubmit: function() {
+									return $(this).form('validate');
+								},
+								success: function(result) {
+									var result = eval('(' + result + ')');
+									if(result.errorMsg) {
+										$.messager.show({
+											title: 'Error',
+											msg: result.errorMsg
+										});
+									} else {
+										$('#dlg').dialog('close'); // close the dialog
+										$('#dg').datagrid('reload'); // reload the user data
+									}
+								}
+							});
+						}
+
+						function destroyUser() {
+							var row = $('#dg').datagrid('getSelected');
+							if(row) {
+								$.messager.confirm('Confirm', 'Are you sure you want to destroy this user?', function(r) {
+									if(r) {
+										$.post('destroy_user.php', {
+											id: row.id
+										}, function(result) {
+											if(result.success) {
+												$('#dg').datagrid('reload'); // reload the user data
+											} else {
+												$.messager.show({ // show error message
+													title: 'Error',
+													msg: result.errorMsg
+												});
+											}
+										}, 'json');
+									}
+								});
+							}
+						}
+					</script>
+				</div>
+
+				<div id="_easyui_tree_7" class="easyui_tree none">
+					<h2>Basic Accordion</h2>
+					<p>Click on panel header to show its content.</p>
+					<div style="margin:20px 0 10px 0;"></div>
+					<div class="easyui-accordion" style="width:700px;height:500px;">
+						<div title="About" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
+							<h3 style="color:#0099FF;">Accordion for jQuery</h3>
+							<p>Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.</p>
+						</div>
+						<div title="Help" data-options="iconCls:'icon-help'" style="padding:10px;">
+							<p>The accordion allows you to provide multiple panels and display one or more at a time. Each panel has built-in support for expanding and collapsing. Clicking on a panel header to expand or collapse that panel body. The panel content can be loaded via ajax by specifying a 'href' property. Users can define a panel to be selected. If it is not specified, then the first panel is taken by default.</p>
+						</div>
+						<div title="TreeMenu" data-options="iconCls:'icon-search'" style="padding:10px;">
+							<ul class="easyui-tree">
+								<li>
+									<span>Foods</span>
+									<ul>
+										<li>
+											<span>Fruits</span>
+											<ul>
+												<li>apple</li>
+												<li>orange</li>
+											</ul>
+										</li>
+										<li>
+											<span>Vegetables</span>
+											<ul>
+												<li>tomato</li>
+												<li>carrot</li>
+												<li>cabbage</li>
+												<li>potato</li>
+												<li>lettuce</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="_easyui_tree_9" class="easyui_tree none">
+					<h2>Fluid Accordion</h2>
+					<p>This example shows how to set the width of accordion to a percentage of its parent container.</p>
+					<div style="margin:20px 0 10px 0;"></div>
+					<div class="easyui-accordion" style="width:100%;height:180px;">
+						<div title="About" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
+							<p>width: 100%</p>
+						</div>
+						<div title="Help" data-options="iconCls:'icon-help',href:'_content.html'" style="padding:10px;">
+						</div>
+					</div>
+					<div style="margin:20px 0 10px 0;"></div>
+
+					<div class="easyui-accordion" style="width:50%;height:180px;">
+						<div title="About" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
+							<p>width: 50%</p>
+						</div>
+						<div title="Help" data-options="iconCls:'icon-help',href:'_content.html'" style="padding:10px;">
+						</div>
+					</div>
+				</div>
+
+				<div id="_easyui_tree_10" class="easyui_tree none">
+					<h2>Basic Tabs</h2>
+					<p>Click tab strip to swap tab panel content.</p>
+					<div style="margin:20px 0 10px 0;"></div>
+					<div class="easyui-tabs" style="width:700px;height:250px">
+						<div title="About" style="padding:10px">
+							<p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>
+							<ul>
+								<li>easyui is a collection of user-interface plugin based on jQuery.</li>
+								<li>easyui provides essential functionality for building modem, interactive, javascript applications.</li>
+								<li>using easyui you don't need to write many javascript code, you usually defines user-interface by writing some HTML markup.</li>
+								<li>complete framework for HTML5 web page.</li>
+								<li>easyui save your time and scales while developing your products.</li>
+								<li>easyui is very easy but powerful.</li>
+							</ul>
+						</div>
+						<div title="My Documents" style="padding:10px">
+							<ul class="easyui-tree" data-options="url:'tree_data1.json',method:'get',animate:true"></ul>
+						</div>
+						<div title="Help" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+							This is the help content.
+						</div>
+					</div>
+				</div>
+
+				<div id="_easyui_tree_11" class="easyui_tree none">
+					<h2>Basic DataGrid</h2>
+					<p>The DataGrid is created from markup, no JavaScript code needed.</p>
+					<div style="margin:20px 0;"></div>
+
+					<table class="easyui-datagrid" title="Basic DataGrid" style="width:700px;height:250px" data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+						<thead>
+							<tr>
+								<th data-options="field:'itemid',width:80">Item ID</th>
+								<th data-options="field:'productid',width:100">Product</th>
+								<th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+								<th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+								<th data-options="field:'attr1',width:250">Attribute</th>
+								<th data-options="field:'status',width:60,align:'center'">Status</th>
+							</tr>
+						</thead>
+				</div>
+
+				<div id="_easyui_tree_12" class="easyui_tree none">
+					<div class="easyui-accordion" style="width:500px;height:200px;">
+						<div title="About Accordion" iconCls="icon-ok" style="overflow:auto;padding:10px;">
+							<h3 style="color:#0099FF;">Accordion for jQuery</h3>
+							<p>Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.</p>
+						</div>
+						<div title="About easyui" iconCls="icon-reload" selected="true" style="padding:10px;">
+							easyui help you build your web page easily
+						</div>
+						<div title="Tree Menu">
+							<ul id="tt1" class="easyui-tree">
+								<li>
+									<span>Folder1</span>
+									<ul>
+										<li>
+											<span>Sub Folder 1</span>
+											<ul>
+												<li><span>File 11</span></li>
+												<li><span>File 12</span></li>
+												<li><span>File 13</span></li>
+											</ul>
+										</li>
+										<li><span>File 2</span></li>
+										<li><span>File 3</span></li>
+									</ul>
+								</li>
+								<li><span>File2</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//导航菜单点击事件
+			$('#trees').tree({
+				onClick: function(e) {
+					console.log(e);
+					var treeId = getNum(e.domId);
+					$(".easyui_tree").eq(treeId - 1).show().siblings().hide();
+					console.log(treeId)
+				}
+			});
+
+			function getNum(text) {
+				var value = text.replace(/[^0-9]/ig, "");
+				return value;
+			}
+
+			// 表格拖拽事件
+			$('.left .item').draggable({
+				revert: true,
+				proxy: 'clone'
+			});
+			$('.right td.drop').droppable({
+				onDragEnter: function() {
+					$(this).addClass('over');
+				},
+				onDragLeave: function() {
+					$(this).removeClass('over');
+				},
+				onDrop: function(e, source) {
+					$(this).removeClass('over');
+					if($(source).hasClass('assigned')) {
+						$(this).append(source);
+					} else {
+						var c = $(source).clone().addClass('assigned');
+						$(this).empty().append(c);
+						c.draggable({
+							revert: true
+						});
+					}
+				}
+			});
+
+			//表格提交验证
+			$('#ff').form({
+				onSubmit: function() {
+					return $(this).form('validate');
+				},
+				success: function(data) {
+					$.messager.alert('Info', data, 'info');
+				}
+			});
+
+			//
+			$(function() {
+				$('#cc').layout();
+				setHeight();
+			});
+
+			function addItem() {
+				$('#cc').layout('panel', 'center').append('<p>More Panel Content.</p>');
+				setHeight();
+			}
+
+			function removeItem() {
+				$('#cc').layout('panel', 'center').find('p:last').remove();
+				setHeight();
+			}
+
+			function setHeight() {
+				var c = $('#cc');
+				var p = c.layout('panel', 'center'); // get the center panel
+				var oldHeight = p.panel('panel').outerHeight();
+				p.panel('resize', {
+					height: 'auto'
+				});
+				var newHeight = p.panel('panel').outerHeight();
+				c.layout('resize', {
+					height: (c.height() + newHeight - oldHeight)
+				});
+			}
+		</script>
+	</body>
+
+</html>

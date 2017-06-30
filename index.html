@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>学习系统-首页</title>
+		<link rel="stylesheet" type="text/css" href="css/theme-neptune-all.css"/>
+		<link rel="stylesheet" href="css/index.css" />
+		
+		<script src="js/ext-bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ext-all.js" type="text/javascript"></script>
+		<script src="js/locale-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+		
+		<header>
+			<h2>自适应学习系统</h2>
+			<div class="userOrlogin">
+				<div class="user uol">
+					欢迎您，<span class="userName">XXX 老师</span>
+				</div>
+				<div class="subject uol">
+					数学
+				</div>
+				<div class="login uol">
+					<span id="loging" class="none">登录</span>
+					<span id="exit">退出</span>
+				</div>
+			</div>
+		</header>
+		
+		<div id="content">
+			<div id="treeNav">
+				我是菜单
+				<div id="treeNone">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</div>
+			</div>
+			<div class="contents">
+				我是内容
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			Ext.onReady(function(){  
+				//弹出框
+//				Ext.MessageBox.alert('系统提示', 'Hello World ! ');
+				//可移动的窗口
+//				var win = new Ext.Window({
+//			        title : '窗口',  
+//			        width : 476,  
+//			        height : 374,  
+//			        html : '<div>这里是窗体内容</div>',  
+//			        resizable : true,  
+//			        modal : false,  
+//			        closable : false,  
+//			        maximizable : true,  
+//			        minimizable : true  
+//			    });  
+//			    win.show();  
+				Ext.create('Ext.tree.Panel', {  
+				    title: 'Simple Tree',  
+				    width: 200,  
+				    height: 150,  
+				    store: store,  
+				    rootVisible: false,  
+				    listeners: {  
+				    itemclick:function(view,record,item,index,e,eOpts){   
+		                 // 从record item index 等参数中我们可以获得大部分满足我们应用的信息  
+		                if(record.get('text')=='book'){// do somethings……};  
+		                if(record.get('text')=='detetion'){//do something……}  
+				        }  
+				    },  
+				    renderTo: Ext.getBody()  
+				});  
+					
+			});
+		</script>
+	</body>
+</html>
