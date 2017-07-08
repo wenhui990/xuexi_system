@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>学习系统-首页</title>
+		<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icon.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+		<script src="js/jquery1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--excel导入导出插件-->
+		<script src="table/xlsx.full.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--excel导出插件-->
+		<script src="table/excellentexport.js" type="text/javascript" charset="utf-8"></script>
+		<!--vue 插件-->
+		<script src="js/vue/vue.js" type="text/javascript" charset="utf-8"></script>
+
+		<style type="text/css">
+			.left {
+				width: 120px;
+				float: left;
+			}
+			
+			.left table {
+				background: #E0ECFF;
+			}
+			
+			.left td {
+				background: #eee;
+			}
+			
+			.right {
+				float: right;
+				width: 600px;
+			}
+			
+			.right table {
+				background: #E0ECFF;
+				width: 100%;
+			}
+			
+			.right td {
+				background: #fafafa;
+				text-align: center;
+				padding: 2px;
+			}
+			
+			.right td {
+				background: #E0ECFF;
+			}
+			
+			.right td.drop {
+				background: #fafafa;
+				width: 100px;
+			}
+			
+			.right td.over {
+				background: #FBEC88;
+			}
+			
+			.item {
+				text-align: center;
+				border: 1px solid #499B33;
+				background: #fafafa;
+				width: 100px;
+			}
+			
+			.assigned {
+				border: 1px solid #BC2A4D;
+			}
+			
+			.dd-demo {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			
+			.products {
+				list-style: none;
+				margin-right: 300px;
+				padding: 0px;
+				height: 100%;
+			}
+			
+			.products li {
+				display: inline;
+				float: left;
+				margin: 10px;
+			}
+			
+			.item {
+				display: block;
+				text-decoration: none;
+			}
+			
+			.item img {
+				border: 1px solid #333;
+			}
+			
+			.item p {
+				margin: 0;
+				font-weight: bold;
+				text-align: center;
+				color: #c3c3c3;
+			}
+			
+			.cart {
+				position: fixed;
+				right: 0;
+				top: 0;
+				width: 300px;
+				height: 100%;
+				background: #ccc;
+				padding: 0px 10px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<header>
+			<h2>自适应学习系统</h2>
+			<div class="userOrlogin">
+				<div class="user uol">
+					欢迎您，<span class="userName">XXX 老师</span>
+				</div>
+				<div class="subject uol">
+					数学
+				</div>
+				<div class="login uol">
+					<span id="loging" class="none">登录</span>
+					<span id="exit">退出</span>
+				</div>
+			</div>
+		</header>
+
+		<!--拖动-->
+		<div id="dd1" class="dd-demo">dd1</div>
+		<div id="dd2" class="dd-demo">dd2</div>
+		<div id="dd3" class="dd-demo">dd3</div>
+
+		<!--菜单-->
+		<div id="mm" class="easyui-menu" style="width:120px;">
+			<div onclick="javascript:alert('new')">New</div>
+			<div>
+				<span>Open</span>
+				<div style="width:150px;">
+					<div><b>Word</b></div>
+					<div>Excel</div>
+					<div>PowerPoint</div>
+				</div>
+			</div>
+			<div iconCls="icon-save">Save</div>
+			<div class="menu-sep"></div>
+			<div>Exit</div>
+		</div>
+
+		<!--图标链接按钮-->
+		<div style="padding:5px;background:#fafafa;width:500px;border:1px solid #ccc" id="mmb">
+			<a href="#" class="easyui-linkbutton" iconCls="icon-cancel">Cancel</a>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-reload">Refresh</a>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-search">Query</a>
+			<a href="#" class="easyui-linkbutton">text button</a>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-print">Print</a>
+		</div>
+		<div style="padding:5px;background:#fafafa;width:500px;border:1px solid #ccc">
+			<a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-cancel">Cancel</a>
+			<a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-reload">Refresh</a>
+			<a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-search">Query</a>
+			<a href="#" class="easyui-linkbutton" plain="true">text button</a>
+			<a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-print">Print</a>
+			<a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-help"></a>
+			<a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-save"></a>
+			<a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-back"></a>
+		</div>
+
+		<div style="border:1px solid #ccc;background:#fafafa;padding:5px;width:120px;">
+			<a href="#" class="easyui-splitbutton" menu="#mm" iconCls="icon-edit">Edit</a>
+			<a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-help"></a>
+		</div>
+		<div id="mm" style="width:150px;">
+			<div iconCls="icon-undo">Undo</div>
+			<div iconCls="icon-redo">Redo</div>
+			<div class="menu-sep"></div>
+			<div>Cut</div>
+			<div>Copy</div>
+			<div>Paste</div>
+			<div class="menu-sep"></div>
+			<div>
+				<span>Open</span>
+				<div style="width:150px;">
+					<div>Firefox</div>
+					<div>Internet Explorer</div>
+					<div class="menu-sep"></div>
+					<div>Select Program...</div>
+				</div>
+			</div>
+			<div iconCls="icon-remove">Delete</div>
+			<div>Select All</div>
+		</div>
+
+		<div class="easyui-tabs" style="width:400px;height:100px;">
+			<div title="First Tab" style="padding:10px;">
+				<div>jfds</div>
+				<p>ds;ajk</p>
+			</div>
+			<div title="Second Tab" closable="true" style="padding:10px;">
+				Second Tab
+			</div>
+			<div title="Third Tab" iconCls="icon-reload" closable="true" style="padding:10px;">
+				Third Tab
+			</div>
+		</div>
+
+		<div style="margin-bottom:10px">
+			<a href="#" class="easyui-linkbutton" onclick="addTab('google','http://www.google.com')">google</a>
+			<a href="#" class="easyui-linkbutton" onclick="addTab('jquery','http://jquery.com/')">jquery</a>
+			<a href="#" class="easyui-linkbutton" onclick="addTab('easyui','http://jeasyui.com/')">easyui</a>
+		</div>
+		<div id="tt" class="easyui-tabs" style="width:400px;height:250px;">
+			<div title="Home">
+			</div>
+		</div>
+
+		<!--    数据表格                        -->
+		<table id="tt" class="easyui-datagrid" style="width:600px;height:250px" data-options="singleSelect:true,collapsible:true,url:'data/datagrid_data.json',method:'get'" title="加载json数据" iconCls="icon-save">
+			<thead>
+				<tr>
+					<th field="itemid" width="80">Item ID</th>
+					<th field="productid" width="80">Product ID</th>
+					<th field="listprice" width="80" align="right">List Price</th>
+					<th field="unitcost" width="80" align="right">Unit Cost</th>
+					<th field="attr1" width="150">Attribute</th>
+					<th field="status" width="60" align="center">Stauts</th>
+				</tr>
+			</thead>
+		</table>
+		<!--表格工具栏-->
+		<table id="tt" class="easyui-datagrid" style="width:600px;height:250px"data-options="singleSelect:true,collapsible:true,url:'data/datagrid_data.json',method:'get'" title="表格工具栏" iconCls="icon-save" toolbar="#tb">
+			<thead>
+				<tr>
+					<th field="itemid" width="80">Item ID</th>
+					<th field="productid" width="80">Product ID</th>
+					<th field="listprice" width="80" align="right">List Price</th>
+					<th field="unitcost" width="80" align="right">Unit Cost</th>
+					<th field="attr1" width="150">Attribute</th>
+					<th field="status" width="60" align="center">Stauts</th>
+				</tr>
+			</thead>
+		</table>
+		
+		<div id="tb">
+			<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:alert('Add')">Add</a>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true" onclick="javascript:alert('Cut')">Cut</a>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:alert('Save')">Save</a>
+		</div>
+		<!--复杂的表格工具栏-->
+		<div id="tb1" style="padding:5px;height:auto">
+			<div style="margin-bottom:5px">
+				<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true"></a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true"></a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true"></a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true"></a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true"></a>
+			</div>
+			<div>
+				Date From: <input class="easyui-datebox" style="width:80px"> To: <input class="easyui-datebox" style="width:80px"> Language:
+				<input class="easyui-combobox" style="width:100px" data-options="singleSelect:true,collapsible:true,url:'data/combobox_data.json',method:'get'"  valueField="id" textField="text">
+				<a href="#" class="easyui-linkbutton" iconCls="icon-search">Search</a>
+			</div>
+		</div>
+		<table id="tbb" class="easyui-datagrid" style="width:600px;height:250px" data-options="rownumbers:true,singleSelect:true,pagination:true,collapsible:true,url:'data/datagrid_data.json',method:'get',fitColumns:true" title="复杂表格工具栏" toolbar="#tb1">
+			<thead>
+				<tr>
+					<th field="itemid" width="60">Item ID</th>
+					<th field="productid" width="80">Product ID</th>
+					<th field="listprice" align="right" width="70">List Price</th>
+					<th field="unitcost" align="right" width="70">Unit Cost</th>
+					<th field="attr1" width="200">Address</th>
+					<th field="status" width="50">Status</th>
+				</tr>
+			</thead>
+		</table>
+		
+
+		<!--    导入excel html      -->
+		<input type="file" onchange="importf(this)" />
+		<div id="demo"></div>
+		<!--    导入excel js        -->
+		<script>
+			var pager = $('#tbb').datagrid().datagrid('getPager');
+			var tableHeader, htmlJson; //定义表格全局变量
+			/*
+	            FileReader共有4种读取方法：
+	            1.readAsArrayBuffer(file)：将文件读取为ArrayBuffer。
+	            2.readAsBinaryString(file)：将文件读取为二进制字符串
+	            3.readAsDataURL(file)：将文件读取为Data URL
+	            4.readAsText(file, [encoding])：将文件读取为文本，encoding缺省值为'UTF-8'
+            */
+			var wb; //读取完成的数据
+			var rABS = false; //是否将文件读取为二进制字符串
+
+			function importf(obj) { //导入
+				if(!obj.files) {
+					return;
+				}
+				var f = obj.files[0];
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					var data = e.target.result;
+					if(rABS) {
+						wb = XLSX.read(btoa(fixdata(data)), { //手动转化
+							type: 'base64'
+						});
+					} else {
+						wb = XLSX.read(data, {
+							type: 'binary'
+						});
+					}
+					//wb.SheetNames[0]是获取Sheets中第一个Sheet的名字
+					//wb.Sheets[Sheet名]获取第一个Sheet的数据
+					htmlJson = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+
+					//模版添加表格部分
+					$('.demo').show();
+					console.log(htmlJson.length)
+					tableHeader = htmlJson[0];
+					var tableh = new Vue({
+						el: '#table_header',
+						data: {
+							object: tableHeader
+						}
+					});
+					//循环添加表格
+					for(var i = 0, len = htmlJson.length; i < len; i++) {
+						var tables = $('<tr id="table_body' + i + '"></tr>');
+						tables.append('<td v-for="(value,key) in objects">{{ value }}</td>')
+						$('tbody#ttt').append(tables);
+						new Vue({
+							el: '#table_body' + i,
+							data: {
+								objects: htmlJson[i]
+							}
+						});
+					}
+					//document.getElementById("demo").innerHTML = JSON.stringify(XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]));
+				};
+				if(rABS) {
+					reader.readAsArrayBuffer(f);
+				} else {
+					reader.readAsBinaryString(f);
+				}
+			}
+
+			function fixdata(data) { //文件流转BinaryString
+				var o = "",
+					l = 0,
+					w = 10240;
+				for(; l < data.byteLength / w; ++l) o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w, l * w + w)));
+				o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w)));
+				return o;
+			}
+		</script>
+
+		<!--导入表格部分-->
+		<table class="demo none" border="1">
+			<tbody id="ttt">
+				<tr id="table_header">
+					<th v-for="(value,key) in object">
+						{{ key }}
+					</th>
+				</tr>
+			</tbody>
+		</table>
+
+		<!--json导出excel html-->
+		<div>
+			<button onclick="downloadExl(htmlJson)">导出</button>
+			<a href="" id="hf"></a>
+		</div>
+
+		<!--json导出excel js-->
+		<script type="text/javascript">
+			var tmpDown; //导出的二进制对象
+			function downloadExl(json, type) {
+				$('#hf').attr('download', 'file' + new Date().getTime() + '.xlsx'); //下载文件名
+				var tmpdata = json[0];
+				json.unshift({});
+				var keyMap = []; //获取keys
+				for(var k in tmpdata) {
+					keyMap.push(k);
+					json[0][k] = k;
+				}
+				var tmpdata = []; //用来保存转换好的json 
+				json.map((v, i) => keyMap.map((k, j) => Object.assign({}, {
+					v: v[k],
+					position: (j > 25 ? getCharCol(j) : String.fromCharCode(65 + j)) + (i + 1)
+				}))).reduce((prev, next) => prev.concat(next)).forEach((v, i) => tmpdata[v.position] = {
+					v: v.v
+				});
+				var outputPos = Object.keys(tmpdata); //设置区域,比如表格从A1到D10
+				var tmpWB = {
+					SheetNames: ['mySheet'], //保存的表标题
+					Sheets: {
+						'mySheet': Object.assign({},
+							tmpdata, //内容
+							{
+								'!ref': outputPos[0] + ':' + outputPos[outputPos.length - 1] //设置填充区域
+							})
+					}
+				};
+				tmpDown = new Blob([s2ab(XLSX.write(tmpWB, {
+						bookType: (type == undefined ? 'xlsx' : type),
+						bookSST: false,
+						type: 'binary'
+					} //这里的数据是用来定义导出的格式类型
+				))], {
+					type: ""
+				}); //创建二进制对象写入转换好的字节流
+				var href = URL.createObjectURL(tmpDown); //创建对象超链接
+				document.getElementById("hf").href = href; //绑定a标签
+				document.getElementById("hf").click(); //模拟点击实现下载
+				setTimeout(function() { //延时释放
+					URL.revokeObjectURL(tmpDown); //用URL.revokeObjectURL()来释放这个object URL
+				}, 100);
+			}
+
+			function s2ab(s) { //字符串转字符流
+				var buf = new ArrayBuffer(s.length);
+				var view = new Uint8Array(buf);
+				for(var i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
+				return buf;
+			}
+			// 将指定的自然数转换为26进制表示。映射关系：[0-25] -> [A-Z]。
+			function getCharCol(n) {
+				let temCol = '',
+					s = '',
+					m = 0
+				while(n > 0) {
+					m = n % 26 + 1
+					s = String.fromCharCode(m + 64) + s
+					n = (n - m) / 26
+				}
+				return s
+			}
+		</script>
+
+		<!--本页js样式-->
+		<script type="text/javascript">
+			//拖动
+			$('#dd1').draggable();
+			$('#dd2').draggable({
+				proxy: 'clone'
+			});
+			$('#dd3').draggable({
+				proxy: function(source) {
+					var p = $('<div class="proxy">proxy</div>');
+					p.appendTo('body');
+					return p;
+				}
+			});
+
+			//右键
+			$(function() {
+				$(document).bind('contextmenu', function(e) {
+					$('#mm').menu('show', {
+						left: e.pageX,
+						top: e.pageY
+					});
+					return false;
+				});
+			});
+			$('#mm').menu('show', {
+				left: 200,
+				top: 100
+			});
+
+			function addTab(title, url) {
+				if($('#tt').tabs('exists', title)) {
+					$('#tt').tabs('select', title);
+				} else {
+					var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
+					$('#tt').tabs('add', {
+						title: title,
+						content: content,
+						closable: true
+					});
+				}
+			}
+
+			
+		</script>
+		
+		
+		
+		
+		<!--导出excel按钮-->
+		<a download="somedata.xls" href="javascript:;" onclick="return ExcellentExport.excel(this, 'ttt', 'Sheet Name Here');">导出</a>
+
+
+
+
+</script>
+</html>
